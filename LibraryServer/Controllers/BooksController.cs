@@ -74,9 +74,9 @@ namespace LibraryServer.Controllers
             return BadRequest();
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("books/review")]
-        public async Task<ActionResult<int>> AddReview([FromBody] ReviewCreationDTO reviewDTO)
+        public async Task<ActionResult<int>> AddReview(ReviewCreationDTO reviewDTO)
         {
             var response = await _bookService.CreateReview(reviewDTO);
 
@@ -85,9 +85,9 @@ namespace LibraryServer.Controllers
             return BadRequest();
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("books/rating")]
-        public async Task<ActionResult<int>> AddRating([FromBody] RatingCreationDTO ratingDTO)
+        public async Task<ActionResult<int>> AddRating(RatingCreationDTO ratingDTO)
         {
             var response = await _bookService.CreateRating(ratingDTO);
 
